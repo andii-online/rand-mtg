@@ -18,7 +18,7 @@ f.close()
 
 # Clean out tokens
 for card in mtg_full_set:
-    if 'Token' in card['type_line']:
+    if 'Token' in card['type_line'] or 'Card' in card['type_line'] or 'Plane' in card['type_line'] or 'Vanguard' in card['type_line']:
         mtg_full_set.remove(card)
 
 # Choose N cards at random
