@@ -16,13 +16,18 @@ f = open('mtg.json')
 mtg_full_set = json.load(f)
 f.close()
 
+cleaned_mtg = []
+
 # Clean out tokens
 for card in mtg_full_set:
-    if 'Token' in card['type_line'] or 'Card' in card['type_line'] or 'Plane' in card['type_line'] or 'Vanguard' in card['type_line']:
-        mtg_full_set.remove(card)
+    if not ('Hero' in card['type_line'] or 'Token' in card['type_line'] or
+            'Card' in card['type_line'] or 'Plane' in card['type_line'] or
+            'Vanguard' in card['type_line'] or 'Scheme' in card['type_line'] or
+            'Emblem' in card['type_line']):
+        cleaned_mtg.append(card)
 
 # Choose N cards at random
-rand_mtg_set = random.choices(mtg_full_set, k=args.n)
+rand_mtg_set = random.sample(cleaned_mtg, k=args.n)
 
 # save file at location specified
 out = open(args.out, 'w+')
