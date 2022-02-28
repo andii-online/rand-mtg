@@ -11,5 +11,5 @@ By default the script removes cards deemed unplayable (i.e. Tokens, Vanguards, P
 If you find a bug or want to add a feature, open a pull request!
 
 # Future
--Make interactible webpage where u can see the cards as they're generated and convert the data into copyable text.
--Have presets for different formats (cube, constructed, decks, edh).
+- Make interactible webpage where u can see the cards as they're generated and convert the data into copyable text.
+- Have presets for different formats (cube, constructed, decks, edh).
